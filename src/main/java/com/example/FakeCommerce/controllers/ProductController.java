@@ -42,4 +42,10 @@ public class ProductController {
   public List<Product> getProductByCategory(@RequestParam("categoryName") String category) {
     return productService.getByProductCategory(category);
   }
+
+  // Write an API to get all unique category
+  @GetMapping("/category")
+  public List<String> getAllUniqueCategory() {
+    return productService.getAllUniqueCategory();
+  }
 }

@@ -44,4 +44,8 @@ public class ProductService {
         return productRepository.findByCategory(category);
     }
 
+    public List<String> getAllUniqueCategory() {
+        return productRepository.findAllUniqueCategory();
+    }
+
 }
