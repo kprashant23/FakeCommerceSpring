@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.FakeCommerce.dtos.CreateProductRequestDTO;
+import com.example.FakeCommerce.dtos.GetProductResponseDTO;
+import com.example.FakeCommerce.dtos.GetProductWithDetailsResponseDTO;
 import com.example.FakeCommerce.schema.Product;
 import com.example.FakeCommerce.services.ProductService;
 
@@ -24,13 +26,18 @@ public class ProductController {
   private final ProductService productService;
 
   @GetMapping
-  public List<Product> getAllProducts() {
+  public List<GetProductResponseDTO> getAllProducts() {
     return productService.getAllProducts();
   }
 
   @PostMapping
   public Product createProduct(@RequestBody CreateProductRequestDTO requestDto) {
     return productService.createProduct(requestDto);
+  }
+
+  @GetMapping("/{id}/details")
+  public GetProductWithDetailsResponseDTO getProductWithDetails(@PathVariable Long id) {
+    return productService.getProductWithDetails(id);
   }
 
   @DeleteMapping("/{id}")
@@ -44,7 +51,7 @@ public class ProductController {
   }
 
   // Write an API to get all unique category
-  @GetMapping("/category")
+  @GetMapping("/categories")
   public List<String> getAllUniqueCategory() {
     return productService.getAllUniqueCategory();
   }

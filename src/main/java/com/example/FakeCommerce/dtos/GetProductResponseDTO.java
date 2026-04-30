@@ -3,15 +3,17 @@ package com.example.FakeCommerce.dtos;
 import java.math.BigDecimal;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-public class CreateProductRequestDTO {
+@SuperBuilder
+public class GetProductResponseDTO {
+  private Long id;
+
   private String title;
 
   private String description;
@@ -20,8 +22,5 @@ public class CreateProductRequestDTO {
 
   private String image;
 
-  private Long categoryId;
-
   private String rating;
-
 }
