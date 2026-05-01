@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name = "category")
-@SQLDelete(sql = "UPDATE category SET deleted_at=CURRENT_TIMESTAMP WHERE id=?")
+@Table(name = "categories")
+@SQLDelete(sql = "UPDATE categories SET deleted_at=CURRENT_TIMESTAMP WHERE id=?")
 @SQLRestriction("deleted_at is NULL")
 public class Category extends BaseEntity {
   @Column(nullable = false)

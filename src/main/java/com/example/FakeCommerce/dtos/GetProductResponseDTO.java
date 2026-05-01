@@ -22,5 +22,5 @@ public class GetProductResponseDTO {
 
   private String image;
 
-  private String rating;
+  private BigDecimal rating;
 }

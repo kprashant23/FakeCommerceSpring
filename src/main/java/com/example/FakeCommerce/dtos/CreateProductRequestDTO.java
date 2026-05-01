@@ -22,6 +22,6 @@ public class CreateProductRequestDTO {
 
   private Long categoryId;
 
-  private String rating;
+  private BigDecimal rating;
 
 }
